@@ -155,26 +155,75 @@ C:\githubrepo\ktds-edu-cicd-azure\README.md
 
 ## 1) 개인 VM 서버 주소 확인- ★
 
-원할한 실습을 위해서 개인별 한개씩 VM 이 할당되어 있다.  해당 노드에 kubernetes 를 설치 및 다양한 실습을 진행할 것이다.
+### (1) eduUserID 와 VM Server
 
-수강생별 개인 VM Server 접속 주소를 확인하자. 또한 KtdsEduCluster 에서 사용할 개인별 Namespace 를 확인하자.
+원할한 실습을 위해서 개인별 한개씩 VM 이 할당되어 있다. 
 
-| 이름   | 소속       | Email | eduUserID | VM  Server | VM  Server IP | 비고 |
-| ------ | ---------- | ----- | --------- | ---------- | ------------- | ---- |
-| 송양종 | CloudCoE팀 | 강사1 | edu00     | eduVM00    |               |      |
-| 송양종 | CloudCoE팀 | 강사2 | edu01     | eduVM01    |               |      |
-|        |            |       |           |            |               |      |
-|        |            |       |           |            |               |      |
-|        |            |       |           |            |               |      |
-|        |            |       |           |            |               |      |
-|        |            |       |           |            |               |      |
-|        |            |       |           |            |               |      |
-|        |            |       |           |            |               |      |
-|        |            |       |           |            |               |      |
-|        |            |       |           |            |               |      |
-|        |            |       |           |            |               |      |
-|        |            |       |           |            |               |      |
-|        |            |       |           |            |               |      |
+수강생별 개인 eduUserID와 VM Server 접속 주소를 확인하자. eduUserID 는 AKS 에서 사용할 개인별 Namespace 로 활용 될 것이다.
+
+| 이름   | 소속           | Email                 | eduUserID | VM Server | VM Server IP |
+| ------ | -------------- | --------------------- | --------- | --------- | ------------ |
+| 송양종 | CloudCoE팀     | yj.song@kt.com        | edu00     | eduVM00   |              |
+| 송양종 | CloudCoE팀     | yj.song@kt.com        | edu01     | eduVM01   |              |
+| 강민수 | 인증플랫폼팀   | edward.kang@kt.com    | edu02     | eduVM02   |              |
+| 권승일 | Cloud CoE팀    | kwon.seungil@kt.com   | edu03     | eduVM03   |              |
+| 김무성 | PAY서비스팀    | mu-seong.kim@kt.com   | edu04     | eduVM04   |              |
+| 김혜린 | Cloud CoE팀    | kim.hyerin@kt.com     | edu05     | eduVM05   |              |
+| 문은희 | 보안운영팀     | ehmoon@kt.com         | edu06     | eduVM06   |              |
+| 박한범 | 플랫폼CoE팀    | hanbeom.park@kt.com   | edu07     | eduVM07   |              |
+| 여정동 | 플랫폼CoE팀    | jeongdong.yeo@kt.com  | edu08     | eduVM08   |              |
+| 염형필 | 아키텍처팀     | davidhungpill@kt.com  | edu09     | eduVM09   |              |
+| 유제천 | 에듀DX플랫폼팀 | jecheon.yu@kt.com     | edu10     | eduVM10   |              |
+| 이정필 | 플랫폼CoE팀    | jeongpil.lee@kt.com   | edu11     | eduVM11   |              |
+| 정진영 | 보안운영팀     | jin-young.jung@kt.com | edu12     | eduVM12   |              |
+| 조민정 | Cloud CoE팀    | hs-cho@kt.com         | edu13     | eduVM13   |              |
+| 주성환 | 플랫폼CoE팀    | sunghwan.joo@kt.com   | edu14     | eduVM14   |              |
+| 한만권 | Cloud CoE팀    | mk.han@kt.com         | edu15     | eduVM15   |              |
+|        |                |                       | edu16     | eduVM16   |              |
+|        |                |                       | edu17     | eduVM17   |              |
+|        |                |                       | edu18     | eduVM18   |              |
+
+
+
+### (2) Azure Entra ID
+
+개인별 Azure ID 가 준비되어 있다.
+
+eduUserID  와 ssongmantopgmail.onmicrosoft.com 도메인의 조합이 아래 표를 참고한다.
+
+```sh
+
+edu00@ssongmantopgmail.onmicrosoft.com
+edu01@ssongmantopgmail.onmicrosoft.com
+edu02@ssongmantopgmail.onmicrosoft.com
+edu03@ssongmantopgmail.onmicrosoft.com
+edu04@ssongmantopgmail.onmicrosoft.com
+edu05@ssongmantopgmail.onmicrosoft.com
+edu06@ssongmantopgmail.onmicrosoft.com
+edu07@ssongmantopgmail.onmicrosoft.com
+edu08@ssongmantopgmail.onmicrosoft.com
+edu09@ssongmantopgmail.onmicrosoft.com
+edu10@ssongmantopgmail.onmicrosoft.com
+edu11@ssongmantopgmail.onmicrosoft.com
+edu12@ssongmantopgmail.onmicrosoft.com
+edu13@ssongmantopgmail.onmicrosoft.com
+edu14@ssongmantopgmail.onmicrosoft.com
+edu15@ssongmantopgmail.onmicrosoft.com
+edu16@ssongmantopgmail.onmicrosoft.com
+edu17@ssongmantopgmail.onmicrosoft.com
+edu18@ssongmantopgmail.onmicrosoft.com
+
+```
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -228,7 +277,9 @@ Github 계정이 없는 경우 먼저 회원가입부터 진행하자.
 
 ### (2) GitHub CLI 로그인 (gh login)
 
-GitHub CLI를 사용하려면 먼저 로그인 절차를 거쳐야 한다.  eduVM 에 Connect 하여 아래 명령을 수행한다.
+GitHub CLI를 사용하려면 먼저 로그인 절차를 거쳐야 한다.  
+
+자신의 eduVM 에 Connect 하여 아래 명령을 수행한다.
 
 ```bash
 
@@ -320,6 +371,12 @@ rohansong/SampleJava  STS healthcheck, dockerizing  public, fork  about 5 hours 
 # 확인2
 $ cd SampleJava
 $ ll
+
+
+# 확인3
+# github web ui 에서도 확인해 보자.
+https://github.com/rohansong/    # <-- 각 개인 계정의 github 을 확인한다.
+
 
 ```
 
