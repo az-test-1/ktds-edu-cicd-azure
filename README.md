@@ -9,7 +9,7 @@
 
 # 교육목표
 
-* Azure 환경에서 소스코드 형상관리 및 Build, Deploy를 이해할 수 있다.
+* Azure / Github 환경에서 소스코드 형상관리 및 Build, Deploy를 이해할 수 있다.
 * Pipeline 수행에 필요한 Runner(Self-hosted Agent 등)의 구축 및 구동방식을 이해할 수 있다.
 * GitOps 기반의 배포와 ArgoCD 구축 및 작동 방식을 이해할 수 있다.
 * Github Action을 활용한 Pipeline을 구축할 수 있다.

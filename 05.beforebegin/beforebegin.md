@@ -161,27 +161,27 @@ C:\githubrepo\ktds-edu-cicd-azure\README.md
 
 수강생별 개인 eduUserID와 VM Server 접속 주소를 확인하자. eduUserID 는 AKS 에서 사용할 개인별 Namespace 로 활용 될 것이다.
 
-| 이름   | 소속           | Email                 | eduUserID | VM Server | VM Server IP |
-| ------ | -------------- | --------------------- | --------- | --------- | ------------ |
-| 송양종 | CloudCoE팀     | yj.song@kt.com        | edu00     | eduVM00   |              |
-| 송양종 | CloudCoE팀     | yj.song@kt.com        | edu01     | eduVM01   |              |
-| 강민수 | 인증플랫폼팀   | edward.kang@kt.com    | edu02     | eduVM02   |              |
-| 권승일 | Cloud CoE팀    | kwon.seungil@kt.com   | edu03     | eduVM03   |              |
-| 김무성 | PAY서비스팀    | mu-seong.kim@kt.com   | edu04     | eduVM04   |              |
-| 김혜린 | Cloud CoE팀    | kim.hyerin@kt.com     | edu05     | eduVM05   |              |
-| 문은희 | 보안운영팀     | ehmoon@kt.com         | edu06     | eduVM06   |              |
-| 박한범 | 플랫폼CoE팀    | hanbeom.park@kt.com   | edu07     | eduVM07   |              |
-| 여정동 | 플랫폼CoE팀    | jeongdong.yeo@kt.com  | edu08     | eduVM08   |              |
-| 염형필 | 아키텍처팀     | davidhungpill@kt.com  | edu09     | eduVM09   |              |
-| 유제천 | 에듀DX플랫폼팀 | jecheon.yu@kt.com     | edu10     | eduVM10   |              |
-| 이정필 | 플랫폼CoE팀    | jeongpil.lee@kt.com   | edu11     | eduVM11   |              |
-| 정진영 | 보안운영팀     | jin-young.jung@kt.com | edu12     | eduVM12   |              |
-| 조민정 | Cloud CoE팀    | hs-cho@kt.com         | edu13     | eduVM13   |              |
-| 주성환 | 플랫폼CoE팀    | sunghwan.joo@kt.com   | edu14     | eduVM14   |              |
-| 한만권 | Cloud CoE팀    | mk.han@kt.com         | edu15     | eduVM15   |              |
-|        |                |                       | edu16     | eduVM16   |              |
-|        |                |                       | edu17     | eduVM17   |              |
-|        |                |                       | edu18     | eduVM18   |              |
+| 이름   | 소속           | Email                 | eduUserID | VM Server | VM Server IP  |
+| ------ | -------------- | --------------------- | --------- | --------- | ------------- |
+| 송양종 | CloudCoE팀     | yj.song@kt.com        | edu00     | eduVM     | 4.217.174.3   |
+| 송양종 | CloudCoE팀     | yj.song@kt.com        | edu01     | eduVM01   | 4.230.2.176   |
+| 강민수 | 인증플랫폼팀   | edward.kang@kt.com    | edu02     | eduVM02   | 4.217.234.214 |
+| 권승일 | Cloud CoE팀    | kwon.seungil@kt.com   | edu03     | eduVM03   | 4.230.1.176   |
+| 김무성 | PAY서비스팀    | mu-seong.kim@kt.com   | edu04     | eduVM04   | 4.217.238.198 |
+| 김혜린 | Cloud CoE팀    | kim.hyerin@kt.com     | edu05     | eduVM05   | 4.230.2.215   |
+| 문은희 | 보안운영팀     | ehmoon@kt.com         | edu06     | eduVM06   | 4.217.238.125 |
+| 박한범 | 플랫폼CoE팀    | hanbeom.park@kt.com   | edu07     | eduVM07   | 4.230.2.181   |
+| 여정동 | 플랫폼CoE팀    | jeongdong.yeo@kt.com  | edu08     | eduVM08   | 4.230.2.78    |
+| 염형필 | 아키텍처팀     | davidhungpill@kt.com  | edu09     | eduVM09   | 4.217.234.42  |
+| 유제천 | 에듀DX플랫폼팀 | jecheon.yu@kt.com     | edu10     | eduVM10   | 4.230.0.210   |
+| 이정필 | 플랫폼CoE팀    | jeongpil.lee@kt.com   | edu11     | eduVM11   | 4.230.0.130   |
+| 정진영 | 보안운영팀     | jin-young.jung@kt.com | edu12     | eduVM12   | 4.230.0.58    |
+| 조민정 | Cloud CoE팀    | hs-cho@kt.com         | edu13     | eduVM13   | 4.217.238.241 |
+| 주성환 | 플랫폼CoE팀    | sunghwan.joo@kt.com   | edu14     | eduVM14   | 4.230.1.165   |
+| 한만권 | Cloud CoE팀    | mk.han@kt.com         | edu15     | eduVM15   | 4.217.238.18  |
+| 노진욱 |                |                       | edu16     | eduVM16   | 4.217.237.232 |
+| 유동섭 |                |                       | edu17     | eduVM17   | 4.230.2.11    |
+|        |                |                       | edu18     | eduVM18   | 4.230.2.15    |
 
 
 
@@ -219,18 +219,6 @@ edu18@ssongmantopgmail.onmicrosoft.com
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 ## 2) SSH (Mobaxterm) 실행
 
 Mobaxterm 을 실행하여 VM 접속정보를 위한 신규 session 을 생성하자.
@@ -252,7 +240,7 @@ Mobaxterm 을 실행하여 VM 접속정보를 위한 신규 session 을 생성�
 
 - Romote host
   - 개인별로 접근 주소가 다르므로 위 수강생별  VM  Server IP 주소를 확인하자.
-  - ex)  bastion03 : 4.217.252.117  <--- 샘플 이므로 자신의 Server IP를 입력해야 한다.
+  - ex)  bastion03 : 4.217.252.xxx  <--- 샘플 이므로 자신의 Server IP를 입력해야 한다.
 
 - User
   - Specify username 에 Check
