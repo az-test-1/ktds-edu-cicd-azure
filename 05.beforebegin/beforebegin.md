@@ -403,7 +403,11 @@ https://github.com/rohansong/    # <-- 각 개인 계정의 github 을 확인한
 
 ![스크린샷 2024-10-06 오후 8.03.09](./assets/스크린샷 2024-10-06 오후 8.03.09.png)
 
-### (5) 소스내 eduuserid 일괄 수정
+### (5) 소스내 eduUserID 일괄 수정
+
+Fork 받은 Repository 내에  특정 eduUserID 가 다량 포함되어 있다.
+
+아래 처럼 sed 명령을 통해 일괄 수정한후 push 한다. (향후 실습시 반드시 필요함)
 
 ```sh
 $ cd ~/githubrepo/edu00/SampleJava
@@ -446,7 +450,7 @@ spec:
     spec:
       containers:
         - name: samplejava
-          image: ktdseduacr.azurecr.io/edu01/samplejava:v1.0   # 잘 변경되었는지 확인
+          image: ktdseduacr.azurecr.io/edu01/samplejava:v1.0.0   # 잘 변경되었는지 확인
           ports:
           - containerPort: 8080
           
@@ -455,6 +459,13 @@ spec:
 
 
 **Web 에서도 확인**
+
+```sh
+
+# github web ui 에서도 확인해 보자.
+https://github.com/rohansong/    # <-- 각 개인 계정의 github 을 확인한다.
+
+```
 
 
 
